@@ -747,9 +747,6 @@
   vclose_surf_frac=1.0
 
 !-----------------------------------------------------------------------
-! Option to enforce strict mass conservation for each tracer model (only works with itr_met=3,4)
-! At moment the scheme has not accounted for bottom 'leaking' (e.g. in SED), 
-! so iadjust_mass_consv0(5) must =0
 !-----------------------------------------------------------------------
   iadjust_mass_consv0(1)=0 !T
   iadjust_mass_consv0(2)=0 !S
