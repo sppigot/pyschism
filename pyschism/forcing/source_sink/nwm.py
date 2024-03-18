@@ -36,7 +36,6 @@ from pyschism.utils.jsonencoder import NpEncoder
 from pyschism.forcing.source_sink.base import SourceSink, Sources, Sinks
 
 DATADIR = pathlib.Path(appdirs.user_data_dir("pyschism/nwm"))
-DATADIR.mkdir(exist_ok=True, parents=True)
 
 logger = logging.getLogger(__name__)
 
@@ -293,6 +292,7 @@ class NWMElementPairings:
 
     @_nwm_file.setter
     def _nwm_file(self, nwm_file):
+        DATADIR.mkdir(exist_ok=True, parents=True)
         nwm_file = (
             list(DATADIR.glob("**/*hydrofabric*.gdb")
                  ) if nwm_file is None else nwm_file
